@@ -13,10 +13,13 @@ exports.createProduct  = async (req, res) => {
  var revistas_lancamentoa = "'"+revistas_lancamento.toString()+"'";
  var revistas_ivendasa = "'"+revistas_ivendas.toString()+"'";
  var revistas_prelanca = "'"+revistas_prelanc.toString()+"'";
+ var SIM = "'SIM'";
+
+ var TRUE = "'TRUE'";
     
 console.log(revistas_id, revistas_nomea, revistas_lancamento, revistas_ivendas, revistas_prelanc)
- const rows = await db251.query('INSERT INTO erp_revistas(revistas_id, revistas_nome, revistas_lancamento, revistas_ivendas, revistas_prelanc) VALUES ('+revistas_id+','+revistas_nomea+','+revistas_lancamentoa+','+revistas_ivendasa+', '+revistas_prelanca+')'); 
- const rows2 = await db10070.query('INSERT INTO scl_cad_revistas(revistas_id, revistas_nome, revistas_lancamento, revistas_ivendas, revistas_prelanc) VALUES ('+revistas_id+','+revistas_nomea+','+revistas_lancamentoa+','+revistas_ivendasa+', '+revistas_prelanca+')'); 
+ const rows = await db251.query('INSERT INTO erp_revistas(revistas_id, revistas_nome, revistas_lancamento, revistas_ivendas, revistas_prelanc, REVISTAS_STATUS) VALUES ('+revistas_id+','+revistas_nomea+','+revistas_lancamentoa+','+revistas_ivendasa+', '+revistas_prelanca+', '+TRUE+')'); 
+ const rows2 = await db10070.query('INSERT INTO scl_cad_revistas(revistas_id, revistas_nome, revistas_lancamento, revistas_ivendas, revistas_prelanc, revistas_status) VALUES ('+revistas_id+','+revistas_nomea+','+revistas_lancamentoa+','+revistas_ivendasa+', '+revistas_prelanca+', '+SIM+')'); 
  const rows3 = await db.query('INSERT INTO public.erp_revistas(rev_num_rev, rev_nom, rev_lan, rev_iven, rev_prelan) VALUES ('+revistas_id+','+revistas_nomea+','+revistas_lancamentoa+','+revistas_ivendasa+', '+revistas_prelanca+')'); 
  
  

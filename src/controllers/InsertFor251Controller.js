@@ -22,7 +22,7 @@ var anome = "'"+nome.toString()+"'";
 var aprinome = "'"+prinome.toString()+"'";
 var acpfcnpj = "'"+cpfcnpj.toString()+"'";
 var S = "'S'";
-console.log(S);
+console.log(revista,comissao,aprinome,anome,seguimento,grupo,codigogrupofvincula,codigogrupoforgrupo,revista);
 
 
 

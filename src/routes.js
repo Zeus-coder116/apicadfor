@@ -24,10 +24,12 @@ const InsertGrupo251Controller = require('./controllers/InsertGrupo251Controller
 
 const InsertGForvinc251Controller = require('./controllers/InsertGForvinc251Controller');
 
+const usuarios = require('./controllers/usuarios');
+
 const routes = express.Router();
 
 
-routes.post('/insert/:codigo/:nome/:prinome/:comissao/:seguimento/:seguimentogestao/:revistaparalelo/:revista/:acrescimo/:vinculo/:cpfcnpj/:grupo/:ativo/:codigogrupofvincula/:codigogrupoforgrupo',InsertFor251Controller.createProduct);
+routes.post('/insert/:codigo/:nome/:prinome/:seguimento/:seguimentogestao/:revistaparalelo/:revista/:comissao/:acrescimo/:vinculo/:cpfcnpj/:codigogrupofvincula/:codigogrupoforgrupo/:grupo/:ativo/',InsertFor251Controller.createProduct);
 
 routes.post('/InsertRevFor251/:revistas_id/:revistas_nome/:revistas_lancamento/:revistas_ivendas/:revistas_prelanc',InsertRevFor251Controller.createProduct);
 
@@ -46,6 +48,8 @@ routes.get('/selectrevista/',SelectrevistaFor251Controller.listAllProducts);
 routes.post('/InsertGrupo251Controller/:codigogrupo/:descricao',InsertGrupo251Controller.createProduct);
 
 routes.post('/InsertGForvinc251Controller/:codigogrupo/:descricao',InsertGForvinc251Controller.createProduct);
+
+routes.get('/usuarios/:usu_login/:usu_senha',usuarios.listAllProducts);
 
 
 
