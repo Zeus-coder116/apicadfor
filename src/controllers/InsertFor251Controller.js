@@ -4,6 +4,7 @@ const db100110 = require("../config/database3");
 exports.createProduct  = async (req, res) => {
  const codigo = req.params.codigo;
  const nome = req.params.nome;
+ const nomeabreviado = req.params.nomeabreviado; 
  const seguimento = req.params.seguimento;
  const revistaparalelo = req.params.revistaparalelo;
  const revista = req.params.revista;
@@ -19,6 +20,7 @@ exports.createProduct  = async (req, res) => {
  const codigogrupoforgrupo = req.params.codigogrupoforgrupo;
  
 var anome = "'"+nome.toString()+"'";
+var anomeabreviado = "'"+nomeabreviado.toString()+"'";
 var aprinome = "'"+prinome.toString()+"'";
 var acpfcnpj = "'"+cpfcnpj.toString()+"'";
 var S = "'S'";
@@ -31,7 +33,7 @@ console.log(revista,comissao,aprinome,anome,seguimento,grupo,codigogrupofvincula
  const rows3 = await db251.query('INSERT INTO erp_fabricante_grupo(fg_grupo_id, fg_fabricantes_id) VALUES ('+grupo+','+codigo+')');  
  
  
- const rows4 = await db100110.query('INSERT INTO fabricas(codigofab, codigoalt, nomefabric, desconto, acrescimo, podepedido, podeentrad, podetrfent, podetrfsai, podedevfab, podedevcli, podetroca, mostranome, mensagem, prazotroca) VALUES ('+codigo+','+codigo+','+anome+',0.00, 0.00, '+S+', '+S+', '+S+', '+S+', '+S+', '+S+', '+S+', '+S+', '+S+', 31)');
+ const rows4 = await db100110.query('INSERT INTO fabricas(codigofab, codigoalt, nomefabric, desconto, acrescimo, podepedido, podeentrad, podetrfent, podetrfsai, podedevfab, podedevcli, podetroca, mostranome, mensagem, prazotroca) VALUES ('+codigo+','+codigo+','+anomeabreviado+',0.00, 0.00, '+S+', '+S+', '+S+', '+S+', '+S+', '+S+', '+S+', '+S+', '+S+', 31)');
  
  const rows5 = await db100110.query('INSERT INTO fvincula(codigogrupo, codigofab) VALUES ('+codigogrupofvincula+', '+codigo+')');
 

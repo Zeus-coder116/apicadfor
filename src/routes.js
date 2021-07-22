@@ -29,7 +29,7 @@ const usuarios = require('./controllers/usuarios');
 const routes = express.Router();
 
 
-routes.post('/insert/:codigo/:nome/:prinome/:seguimento/:seguimentogestao/:revistaparalelo/:revista/:comissao/:acrescimo/:vinculo/:cpfcnpj/:codigogrupofvincula/:codigogrupoforgrupo/:grupo/:ativo/',InsertFor251Controller.createProduct);
+routes.post('/insert/:codigo/:nome/:prinome/:seguimento/:seguimentogestao/:revistaparalelo/:revista/:comissao/:acrescimo/:vinculo/:cpfcnpj/:codigogrupofvincula/:codigogrupoforgrupo/:grupo/:ativo/:nomeabreviado',InsertFor251Controller.createProduct);
 
 routes.post('/InsertRevFor251/:revistas_id/:revistas_nome/:revistas_lancamento/:revistas_ivendas/:revistas_prelanc',InsertRevFor251Controller.createProduct);
 
